@@ -189,7 +189,7 @@ void UpdateGameState(float a_fDeltaTime)
 	//Movement Player 1
 	if (IsKeyDown('S'))
 	{
-		p1.fPlayerY -= .8f;
+		p1.fPlayerY -= 2.f;
 		if (p1.fPlayerY < 40)
 		{
 			p1.fPlayerY = 40;
@@ -198,7 +198,7 @@ void UpdateGameState(float a_fDeltaTime)
 
 	if (IsKeyDown('W'))
 	{
-		p1.fPlayerY += .8f;
+		p1.fPlayerY += 2.f;
 		if (p1.fPlayerY > 740)
 		{
 			p1.fPlayerY = 740;
@@ -310,7 +310,7 @@ void UpdateGameState(float a_fDeltaTime)
 	//Movement Player 2
 	if (IsKeyDown('L'))
 	{
-		p2.fPlayer2Y -= .8f;
+		p2.fPlayer2Y -= 2.f;
 		if (p2.fPlayer2Y < 40)
 		{
 			p2.fPlayer2Y = 40;
@@ -320,7 +320,7 @@ void UpdateGameState(float a_fDeltaTime)
 
 	if (IsKeyDown('O'))
 	{
-		p2.fPlayer2Y += .8f;
+		p2.fPlayer2Y += 2.f;
 		if (p2.fPlayer2Y > 740)
 		{
 			p2.fPlayer2Y = 740;
@@ -354,8 +354,8 @@ int main( /*int argc, char* argv[]*/ )
 	
 	balle.fBallX = 256.f;
 	balle.fBallY = screenHeight * 0.5f;
-	balle.ballSpeedX = .5f;
-	balle.ballSpeedY = .5f;
+	balle.ballSpeedX = 1.f;
+	balle.ballSpeedY = 1.f;
 	balle.radius = balle.ballWidth * 0.5f;
 	//______________________________________
 	paddle1 = CreateSprite("./images/LPaddle.png", p1.paddleWidth, p1.paddleHeight, true);
