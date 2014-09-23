@@ -256,7 +256,7 @@ void UpdateGameState(float a_fDeltaTime)
 		balle.ballSpeedX = -balle.ballSpeedX;
 	}
 	
-	//AABB
+	//AABB attempt
 	//if (p1.p1topRightX > balle.topLeftX &&
 	//	p1.p1lowRightX > balle.lowLeftX)
 	//{
@@ -392,6 +392,7 @@ int main( /*int argc, char* argv[]*/ )
 			{
 				eCurrentState = eHIGHSCORES;
 			}
+			ClearScreen();
 			break;
 			//Below handles the High Scores board
 		case eHIGHSCORES:
@@ -409,6 +410,7 @@ int main( /*int argc, char* argv[]*/ )
 						
 							eCurrentState = eMAIN_MENU;
 					}
+					ClearScreen();
 					break;
 		}
 		case eGAMEPLAY:
@@ -432,6 +434,7 @@ int main( /*int argc, char* argv[]*/ )
 				Score1 = 0;
 				Score2 = 0;
 			}
+			ClearScreen();
 			break;
 		default:
 			break;
