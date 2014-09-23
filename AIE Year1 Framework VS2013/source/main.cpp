@@ -13,6 +13,7 @@ const int screenWidth = 672;
 const int screenHeight = 780;
 unsigned int menu;
 unsigned int scoreBoard;
+unsigned int background;
 
 int HighScore;
 
@@ -111,8 +112,6 @@ void UpdateMainMenu()
 		isGameRunning = false;
 	}
 	DrawSprite(menu);
-	//DrawString(pkInsertCoins, iScreenWidth * 0.37f, iScreenHeight * 0.5f, 0.75f);
-	//DrawString(pkCredit, iScreenWidth * 0.25f, iScreenHeight * 0.4f, 0.7f);
 	menu = CreateSprite("./images/iPong.png", screenWidth, screenHeight, true);
 	MoveSprite(menu, screenWidth * 0.5f, screenHeight * 0.5f);
 }
@@ -127,6 +126,9 @@ void UpdateScoreBoard()
 
 void UpdateGameState(float a_fDeltaTime)
 {
+	DrawSprite(background);
+	background = CreateSprite("./images/Gamescreen.png", screenWidth, screenHeight, true);
+	MoveSprite(background, screenWidth * 0.5f, screenHeight * 0.5f);
 	MoveSprite(paddle1, p1.fPlayerX, p1.fPlayerY);
 	MoveSprite(paddle2, p2.fPlayer2X, p2.fPlayer2Y);
 	MoveSprite(ball, balle.fBallX, balle.fBallY);
@@ -357,7 +359,7 @@ int main( /*int argc, char* argv[]*/ )
 	//______________________________________
 	paddle1 = CreateSprite("./images/LPaddle.png", p1.paddleWidth, p1.paddleHeight, true);
 	paddle2 = CreateSprite("./images/RPaddle.png", p2.paddle2Width, p2.paddle2Height, true);
-	ball = CreateSprite("./images/Ball.png", balle.ballWidth, balle.ballHeight, true);
+	ball = CreateSprite("./images/Ball2.png", balle.ballWidth, balle.ballHeight, true);
 
 
 	
