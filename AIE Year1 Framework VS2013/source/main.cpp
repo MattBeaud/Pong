@@ -341,7 +341,8 @@ void UpdateGameState(float a_fDeltaTime)
 
 	ClearScreen();
 }
-
+char HS1[100];
+char HS2[100];
 int main( /*int argc, char* argv[]*/ )
 {	
     Initialise(screenWidth, screenHeight, false, "Pong");
@@ -395,8 +396,7 @@ int main( /*int argc, char* argv[]*/ )
 			//Below handles the High Scores board
 		case eHIGHSCORES:
 		{
-							char HS1[100];
-							char HS2[100];
+							
 					UpdateScoreBoard();
 					itoa(p1HS, HS1, 10) &&
 					itoa(p2HS, HS2, 10);
