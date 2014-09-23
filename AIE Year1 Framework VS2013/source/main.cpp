@@ -390,12 +390,18 @@ int main( /*int argc, char* argv[]*/ )
 				eCurrentState = eHIGHSCORES;
 			}
 			break;
+			//Below handles the High Scores board
 		case eHIGHSCORES:
 		{
 							char HS1[100];
+							char HS2[100];
 					UpdateScoreBoard();
-					itoa(p1HS, HS1, 10);
-					DrawString(HS1, screenWidth / 2, screenHeight / 2);
+					itoa(p1HS, HS1, 10) &&
+					itoa(p2HS, HS2, 10);
+					DrawString(HS1, screenWidth / 2, (screenHeight / 2) + 45);
+					DrawString("Player 1: ", (screenWidth / 2) - 130, (screenHeight / 2) + 45);
+					DrawString(HS2, screenWidth / 2, screenHeight / 2);
+					DrawString("Player 2: ", (screenWidth / 2) - 130, screenHeight / 2);
 					if (IsKeyDown('R'))
 					{
 						
@@ -414,13 +420,13 @@ int main( /*int argc, char* argv[]*/ )
 			{
 				eCurrentState = eMAIN_MENU;
 				p1HS = Score1;
-				p2HS = Score2;
 				Score1 = 0;
 				Score2 = 0;
 			}
 			if (Score2 > 10)
 			{
 				eCurrentState = eMAIN_MENU;
+				p2HS = Score2;
 				Score1 = 0;
 				Score2 = 0;
 			}
